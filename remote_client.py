@@ -16,7 +16,7 @@ s.bind(("",port2))
 for i in range(5) :
 #  sending  data to  target machine 
 
-	cmd=raw_input("Enter your Message :  ")
+	cmd=raw_input("Enter your Command :  ")
 	if cmd == 'reboot' :
 		print ("   This command may disconnect with server machine ")
                 continue
