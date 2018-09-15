@@ -9,11 +9,12 @@ s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 ip="192.168.1.4"
 port=7890
 
-while  4 > 2 :
+for i in range(5) :
 #  sending  data to  target machine 
 	msg=raw_input("enter your message :   ")
-
 	s.sendto(msg,(ip,port))
+	
+s.close()	
 
 
 
