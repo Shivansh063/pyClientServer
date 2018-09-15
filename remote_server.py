@@ -29,5 +29,5 @@ while True:
 			s.sendto(msg,(ip,port2))
 			print msg
 
-s.close()
+s.close() 
 
