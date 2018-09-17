@@ -6,18 +6,12 @@ import  socket,commands,subprocess
 #              ip_version4,         UDP 
 s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 # defining ip and port below 
-ip="192.168.1.3"
+ip="192.168.0.27"
 port=7890
 port2=8888
 s.bind(("",port2))
 
-msg3 = s.recvfrom(20)
-if "linux" in msg3[0] :
-	linux()
-elif "windows" in msg3[0] :
-	windows()
-else :
-	print ("Please type Valid Server")
+
 	
 def linux() :
 	for i in range(5) :
@@ -58,7 +52,13 @@ def windows():
          		else:
              			print ("\n",recv_cmd,"\n")  
 	
-
+msg3 = s.recvfrom(20)
+if 'linux' in msg3[0] :
+	linux()
+elif 'windows' in msg3[0] :
+	windows()
+else :
+	print ("Please type Valid Server")
 	
 
 	
