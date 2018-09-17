@@ -6,7 +6,7 @@ import  commands
 #              ip_version4,         UDP 
 s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 # defining ip and port below 
-ip="192.168.1.3"
+ip="192.168.0.27"
 port=7890
 port2=8888
 #  binind ip and port with bind function that takes input as tuple
