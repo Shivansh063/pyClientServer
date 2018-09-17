@@ -12,6 +12,9 @@ port2=8888
 #  binind ip and port with bind function that takes input as tuple
 s.bind(("",port))
 
+msg = raw_input("Type your Machine either Windows or Linux : ")
+s.sendto(msg,(ip,port2))
+
 #  rec  data from  client 
 while True:
 #  only  accepting  commands with  20 char 
@@ -29,5 +32,5 @@ while True:
 			s.sendto(msg,(ip,port2))
 			print msg
 
-s.close()  
+s.close()
 
