@@ -37,20 +37,23 @@ def linux() :
 def windows():
 
 	for i in range(5) :
-#  sending  data to  target machine 
-    		cmd=input("Enter Your Command : ")
-    		s.sendto(cmd,(ip,port))
-    		if  'exit' in  cmd  or  'close' in cmd:
-        		print ("closing server..")
-        		exit()
-    		else :
-         		server_data=s.recvfrom(500)
-#   only  server  data is stored and printed
-         		recv_cmd=server_data[0]
-         		if "not recognized" in recv_cmd :
-             			print ("\ncommand not found..\nmake sure you are connected to WINDOWS server\n")
-         		else:
-             			print ("\n",recv_cmd,"\n")  
+		msg = raw_input("Enter Your Command : ")
+		s.sendto(msg,(ip,port))
+	
+		if 'exit' in msg or 'close' in msg :
+			print ("Closing Server ...")
+			time.sleep(2)
+			exit()
+		recvdata = s.recvfrom(50000)
+		recdata = recvdata[0]
+
+		if "not recognized" in recdata :
+			print ("Please Enter Valid Command")
+		else : 
+			print ("\n",recdata,"\n")
+
+
+
 	
 msg3 = s.recvfrom(20)
 if 'linux' in msg3[0] :
